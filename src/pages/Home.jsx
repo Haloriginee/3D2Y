@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import  Loader  from '../components/Loader';
 import  Island  from '../models/Island';
+import  Sky  from '../models/Sky';
+import  Bird  from '../models/Bird';
 
 const Home = () => {
 
@@ -14,7 +16,7 @@ const Home = () => {
       screenScale= [0.5, 0.5, 0.5];
       screenPosition= [0, -6.5, -43];
     } else {
-      screenScale= [0.2, 0.2, 0.2];
+      screenScale= [0.25, 0.25, 0.25];
     }
     return [screenScale, screenPosition, rotation]
   }
@@ -38,6 +40,11 @@ const Home = () => {
           <pointLight />
           <directionalLight />
           <hemisphereLight />
+
+          <Bird />
+
+          <Sky />
+
           <Island
             position={islandPosition}
             scale={islandScale}
