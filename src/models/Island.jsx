@@ -45,7 +45,7 @@ const Island = ({ isRotating, setIsRotating, ...props }) => {
 
       const delta =(clientX - lastX.current) / viewport.width;
 
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+      islandRef.current.rotation.z += delta * 0.01 * Math.PI;
 
       lastX.current = clientX;
 
@@ -59,12 +59,12 @@ const Island = ({ isRotating, setIsRotating, ...props }) => {
     if(e.key === "ArrowLeft") {
 
       if(!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y += 0.01 * Math.PI;
+      islandRef.current.rotation.z += 0.01 * Math.PI;
 
     } else if(e.key === "ArrowRight") {
 
       if(!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y -= 0.01 * Math.PI;
+      islandRef.current.rotation.z -= 0.01 * Math.PI;
 
     }
   }
@@ -91,9 +91,11 @@ const Island = ({ isRotating, setIsRotating, ...props }) => {
 
       }
 
+      islandRef.current.rotation.z += rotationSpeed.current;
+
     } else {
 
-      const rotation = islandRef.current.rotation.y;
+      const rotation = islandRef.current.rotation.z; //here
 
       const normalizedRotation =
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
