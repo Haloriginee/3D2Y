@@ -8,6 +8,7 @@ import  Plane  from '../models/Plane';
 
 const Home = () => {
 
+  const [CurrentStage, setCurrentStage] = useState(1)
   const [isRotating, setIsRotating] = useState(false);
 
   const custom = () => {
@@ -60,7 +61,9 @@ const Home = () => {
 
           <Bird />
 
-          <Sky />
+          <Sky
+            isRotating={isRotating}
+          />
 
           <Island
             position={islandPosition}
@@ -68,6 +71,7 @@ const Home = () => {
             rotation={islandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
           />
 
           <Plane
