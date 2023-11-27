@@ -5,7 +5,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { a } from "@react-spring/three"
 
-import islandScene from "../assets/3d/island.glb";
+import islandScene from "../assets/3d/island4.glb";
 
 const Island = ({ isRotating, setIsRotating, setCurrentStage ,...props }) => {
 
@@ -102,16 +102,14 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage ,...props }) => {
 
       // Set the current stage based on the island's orientation
       switch (true) {
-        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
-          setCurrentStage(4);
-          break;
-        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+
+        case normalizedRotation >= 5 && normalizedRotation <= 5.5:
           setCurrentStage(3);
           break;
-        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+        case normalizedRotation >= 1.75 && normalizedRotation <= 2.1:
           setCurrentStage(2);
           break;
-        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+        case normalizedRotation >= 3.9 && normalizedRotation <= 4.4:
           setCurrentStage(1);
           break;
         default:
@@ -143,28 +141,119 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage ,...props }) => {
 
   }, [ gl, handleDown, handleUp, handleMove ])
 
+
+
   return (
     <a.group ref={islandRef} {...props} >
 
-        <mesh
-          geometry={nodes.Object_2.geometry}
-          material={materials["11112_sheet_Material__25"]}
-        />
-
-        <mesh
-          geometry={nodes.Object_3.geometry}
-          material={materials["11112_sheet_Material__25"]}
-        />
-
-        <mesh
-          geometry={nodes.Object_4.geometry}
-          material={materials["11112_sheet_Material__37"]}
-        />
-
-        <mesh
-          geometry={nodes.Object_5.geometry}
-          material={materials["11112_sheet_Material__37"]}
-        />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Clouds_Clouds_0.geometry}
+        material={materials.Clouds}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.hammock_hammock_0.geometry}
+        material={materials.hammock}
+        position={[180.509, 1151.676, 5904.325]}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Tequila_Bottle_Tequila_Bottle_0.geometry}
+        material={materials.Tequila_Bottle}
+        position={[3492.547, 1112.371, 3620.925]}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.skeleton_skeleton_0.geometry}
+        material={materials.skeleton}
+        position={[3541.67, 1110.094, 3568.021]}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pyramid_Pyramid_0.geometry}
+        material={materials.Pyramid}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Island_Grass_Island_Grass_0.geometry}
+        material={materials.Island_Grass}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.shrubbery_shrubbery_0.geometry}
+        material={materials.shrubbery}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Lava_bubble_Lava_bubble_0.geometry}
+        material={materials.Lava_bubble}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Volcanic_lava_Volcanic_lava_0.geometry}
+        material={materials.Volcanic_lava}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Palm_tree_2_Palm_tree_2_0.geometry}
+        material={materials.Palm_tree_2}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Palm_tree_1_Palm_tree_1_0.geometry}
+        material={materials.Palm_tree_1}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Volacano_Sand_Volacano_Sand_0.geometry}
+        material={materials.Volacano_Sand}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Ocean_Ocean_0.geometry}
+        material={materials.Ocean}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Volcano_Grass_Volcano_Grass_0.geometry}
+        material={materials.Volcano_Grass}
+        scale={2}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Volcano_Base_Volcano_Base_0.geometry}
+        material={materials.Volcano_Base}
+        scale={2}
+      />
 
     </a.group>
   );

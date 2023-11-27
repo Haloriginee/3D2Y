@@ -5,6 +5,7 @@ import  Island  from '../models/Island';
 import  Sky  from '../models/Sky';
 import  Bird  from '../models/Bird';
 import  Plane  from '../models/Plane';
+import Info from '../components/Info';
 
 const Home = () => {
 
@@ -13,12 +14,12 @@ const Home = () => {
 
   const custom = () => {
     let screenScale = null;
-    let screenPosition = [4, -11.5, -43];
-    let rotation = [-1.45, 0, 3.25];
+    let screenPosition = [4, -11.5, -44];
+    let rotation = [-1.45, 0, 10.5];
 
     if(window.innerWidth < 768) {
-      screenScale= [0.5, 0.5, 0.5];
-      screenPosition= [0, -6.5, -43];
+      screenScale= [0.4, 0.4, 0.4];
+      screenPosition= [0, -20.5, -100];
     } else {
       screenScale= [0.25, 0.25, 0.25];
     }
@@ -45,13 +46,13 @@ const Home = () => {
 
     <section className='w-full h-screen relative' >
 
-      {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
-        Hello There
-      </div> */}
+      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+        {CurrentStage && <Info CurrentStage={CurrentStage} />}
+      </div>
 
       <Canvas
         camera={{ near: 0.1, far: 1000}}
-        className='w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab" }'
+        className={`w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"}`}
       >
         <Suspense fallback={<Loader />}>
           <ambientLight />
