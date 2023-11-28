@@ -36,11 +36,20 @@ const renderContent = {
     <Box
       text="Are you ready to witness a JavaScript extravaganza? Behold, my latest project showcasing my mad JS skills! It's like a circus of code."
       link="/projects"
-      btn="Learn More"
+      btn="Check it out"
     />
 
   ),
   3: (
+
+    <Box
+      text="I've collected skills like rare Pokémon cards in my career journey. Ready to show you my full deck and bring some magic to your team!"
+      link="/skill"
+      btn="Learn More"
+    />
+
+  ),
+  4: (
 
     <Box
       text="Need a Project done ? I'm just a few keystrokes away."
