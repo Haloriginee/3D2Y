@@ -2,7 +2,11 @@ import React from 'react'
 
 const Conctact = () => {
   return (
-    <div>Conctact</div>
+
+    <section>
+
+    </section>
+
   )
 }
 
