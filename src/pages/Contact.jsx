@@ -1,16 +1,26 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const Conctact = () => {
 
-  const [form, setform] = useState({ name:"", email:"", message:"" })
+  const [form, setform] = useState({ name:"", email:"", message:"" });
+
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = () => {};
+
+  const formRef = useRef(null);
+
+  // Submit Form Functionality
+
+  const handleChange = (e) => {
+    setform({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handlefocus = () => {};
 
   const handleBlur = () => {};
+
+  const handleSubmit = () => {};
 
   return (
 
